@@ -7,6 +7,6 @@
 #'
 #' @examples afunctions(2) = 4
 afunctions <- function(x) {
-  2 * x
+  4 * x
 }
 
