@@ -1,11 +1,11 @@
 #' testfunction
 #'
-#' @param x
+#' @param x x
 #'
 #' @return numeric vector
 #' @export
 #'
-#' @examples afunctions(2) = 4
+#' @examples
 afunctions <- function(x) {
   9 * x
 }

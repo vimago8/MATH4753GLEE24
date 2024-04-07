@@ -7,14 +7,11 @@
 afunctions(x)
 }
 \arguments{
-\item{x}{}
+\item{x}{x}
 }
 \value{
 numeric vector
 }
 \description{
 testfunction
-}
-\examples{
-afunctions(2) = 4
 }
