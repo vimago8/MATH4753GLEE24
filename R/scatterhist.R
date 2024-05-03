@@ -5,13 +5,19 @@
 #' @param xlab label for x variable
 #' @param ylab label for y variable
 #'
+#' @description
+#' Creates a scatter-histogram plot with two variables, LENGTH and WEIGHT.
+#'
+#'
 #' @return a scatter histogram
 #' @export
 #'
 #'
 #' @examples
-#' \dontrun{with(ddt, scatterhist(LENGTH,WEIGHT, xlab="LENGTH"))}
+#' with(ddt, scatterhist(LENGTH,WEIGHT, xlab="LENGTH"))
 scatterhist = function(x, y, xlab="", ylab=""){
+  layout <- hist <- par <- barplot <- mtext <- NULL
+
   zones=matrix(c(2,0,1,3), ncol=2, byrow=TRUE)
   layout(zones, widths=c(4/5,1/5), heights=c(1/5,4/5))
   xhist = hist(x, plot=FALSE)

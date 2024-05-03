@@ -3,20 +3,25 @@
 \docType{data}
 \name{fire}
 \alias{fire}
-\title{Fire Damage Data}
+\title{Fire Damage dataset}
 \format{
-## `fire`
-
+## `who`
+A data frame with 15 rows and 2 columns:
 \describe{
-  \item{x, Distance from fire station}{y, Fire damage in thousands of dollars}
+  \item{DISTANCE}{Distance, in miles}
+  \item{DAMAGE}{Damage, in tens of thousands of dollars}
+
   ...
 }
+}
+\source{
+<https://www.amazon.com/Statistics-Engineering-Sciences-William-Mendenhall/dp/1498728855>
 }
 \usage{
 fire
 }
 \description{
-Has two quantitative variables: x and y, describing distance from fire station
-and fire damage respectively
+Distance from fire station and damage in tens of thousands of dollars. Sample
+size: 15
 }
 \keyword{datasets}

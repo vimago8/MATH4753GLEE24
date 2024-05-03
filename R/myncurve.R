@@ -1,15 +1,24 @@
-#' Normal Distribution
+#' Normal Density Function
 #'
 #' @param mu mean
 #' @param sigma standard deviation
 #' @param a p < a
 #'
-#' @return
+#' @return a plot with the normal density colored in
+#'
+#'
 #' @export
 #'
+#'
+#'
 #' @examples
-#' \dontrun{myncurve(10, 5, 2)}
+#' myncurve(10, 5, 2)
 myncurve = function(mu, sigma, a){
+  curve <- NULL
+  polygon <- NULL
+  pnorm <- NULL
+  dnorm <- NULL
+
   curve(dnorm(x,mean=mu,sd=sigma), xlim = c(mu-3*sigma, mu +
                                               3*sigma),ylim=c(0, 0.3989/sigma),col="Red",ylab="Normal Density")
   x=seq(0, a, length=1000)

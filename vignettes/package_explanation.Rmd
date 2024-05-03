@@ -1,0 +1,51 @@
+---
+title: "MATH4753GLEE24 Explanation"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{MATH4753GLEE24 Explanation}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(MATH4753GLEE24)
+```
+
+# About Package
+
+This package was used to add functions that I needed for labs, assignments, and projects for MATH-4753 at OU.
+
+## myclt
+
+```{r}
+myclt(n=10,iter=10000)
+```
+
+## mymaxlik
+
+```{r}
+logbin=function(x,param) log(dbinom(x,prob=param,size=10))
+mymaxlik(x=c(9,9,1,9,9,9),param=seq(0,1,length=1000),lfun=logbin,xlab=expression(pi),main="Binomial",cex.main=2)
+```
+
+## ntickets
+
+```{r}
+?ntickets
+ntickets(N=200,gamma=0.02,p=0.95)
+```
+
+## scatterhist
+
+```{r}
+?scatterhist
+with(ddt, scatterhist(LENGTH,WEIGHT, xlab="LENGTH"))
+```
+

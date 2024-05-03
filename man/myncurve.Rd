@@ -2,7 +2,7 @@
 % Please edit documentation in R/myncurve.R
 \name{myncurve}
 \alias{myncurve}
-\title{Normal Distribution}
+\title{Normal Density Function}
 \usage{
 myncurve(mu, sigma, a)
 }
@@ -13,9 +13,12 @@ myncurve(mu, sigma, a)
 
 \item{a}{p < a}
 }
+\value{
+a plot with the normal density colored in
+}
 \description{
-Normal Distribution
+Normal Density Function
 }
 \examples{
-\dontrun{myncurve(10, 5, 2)}
+myncurve(10, 5, 2)
 }

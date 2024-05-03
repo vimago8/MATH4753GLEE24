@@ -1,20 +1,29 @@
-#' myclt
+#' Central Limit Theorem (CLT) function
 #'
-#' @param n n
-#' @param iter iter
+#' @param n number of trials
+#' @param iter number of iterations
 #'
-#' @return
+#' @return a plot containing a histogram of the normalized distribution
 #' @export
 #'
 #' @description
-#' The sm has been changed to head(sm) to avoid excessive output
+#' Note: sm has been changed to head(sm) to avoid excessive output.
+#'
+#' This function demonstrates CLT using a uniform distribution. CLT states that
+#' the distribution of a sample variable approximates a normal distribution,
+#' regardless of the actual distribution shape.
+#'
+#'
 #'
 #'
 #' @examples
 #' \dontrun{myclt(n=10,iter=10000)}
 myclt=function(n,iter){
+  runif <- NULL
+  hist <- NULL
+  head <- NULL
   y=runif(n*iter,0,5)
-  data=matrix(y,nr=n,nc=iter,byrow=TRUE)
+  data=matrix(y,nrow=n,ncol=iter,byrow=TRUE)
   sm=apply(data,2,sum)
   hist(sm)
   head(sm)

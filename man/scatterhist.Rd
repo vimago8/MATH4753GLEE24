@@ -19,8 +19,8 @@ scatterhist(x, y, xlab = "", ylab = "")
 a scatter histogram
 }
 \description{
-Plot Function
+Creates a scatter-histogram plot with two variables, LENGTH and WEIGHT.
 }
 \examples{
-\dontrun{with(ddt, scatterhist(LENGTH,WEIGHT, xlab="LENGTH"))}
+with(ddt, scatterhist(LENGTH,WEIGHT, xlab="LENGTH"))
 }

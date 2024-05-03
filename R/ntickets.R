@@ -35,35 +35,45 @@
 #' @examples
 #' \dontrun{ntickets(N=200,gamma=0.02,p=0.95)}
 ntickets <- function(N, gamma, p) {
-#Creates a sequence of values from N to round(N+N/10), separated by 1. These values
-#are used to create a vector of (1-gamma)th quantiles using different "trials" (number
-#) of tickets.
+  qbinom <- qnorm <- pbinom <- pnorm <- NULL
+  index_of_smallest_d <- index_of_smallest <- abline <- NULL
 
+  #1:create sequence of numbers from N to N+N/10 (they are proportional)
+  #2:get inverse cdf, subtract N. This will center n at 0 and make it easy
+  #to find minimum.
+  #3:the index of n is found using which.min. abs(binom_n) ensures that the minimum
+  #found is 0.
+  #4:the index is plugged into the sequence, getting n and storing it in nd
   seqb <- seq(N, round(N+N/10), by=1)
   binom_n <- qbinom(1-gamma,seqb,p)-N
   mIndexb <- which.min(abs(binom_n))
   nd <- seqb[mIndexb]
 
-  seqn <- seq(N, round(N+N/10), by=0.00001)
+  #Same process as above, but with the normal function instead. Each segment is small
+  #to create a continuous-looking function.
+  seqn <- seq(N, round(N+N/10), by=0.001)
   normal_n <- qnorm(1-gamma,mean=(seqn*p),sd=(sqrt((seqn*p)*(1-p))))-N
   mIndexn <- which.min(abs(normal_n))
   nc <- seqn[mIndexn]
 
+
+  #The objective function of the discrete distribution is graphed.
   n_disc <- seq(N, round(N+N/10), by=1)
   objective_disc <- 1-gamma-pbinom(N, size=n_disc, p=p)
-  thepasted= paste("Objective Vs n to find optimal tickets sold(", nd,
-                   ") \n gamma=", gamma,"N=",N,"discrete")
+  thepasted= paste("Objective Vs n to find optimal tickets sold\n(", nd,
+                   ") gamma=", gamma,"N=",N,"discrete")
   plot(n_disc, objective_disc,xlab="n",ylab="Objective",main=thepasted,cex=0.8)
-  abline(h=objective_disc[index_of_smallest_d], v=nd, col="red")
+  abline(h=objective_disc[mIndexb], v=nd, col="red")
 
-  #############
-  n_cont <- seq(N, round(N+N/10), by =0.01)
+  #The objective function of the continuous function is graphed.
+  n_cont <- seq(N, round(N+N/10), by =0.001)
   objective_cont <- 1-gamma-pnorm(N, mean=p * n_cont, sd = sqrt(n_cont * p * (1-p)))
-  thepastec = paste("Objective Vs n to find optimal tickets sold(", nc,
-                   ") \n gamma=", gamma,"N=",N,"continuous")
+  #index_cont <- which.min(abs(objective_cont))
+  thepastec = paste("Objective Vs n to find optimal tickets sold\n(", nc,
+                   ") gamma=", gamma,"N=",N,"continuous")
 
   plot(n_cont, objective_cont,xlab="n",ylab="Objective",main=thepastec,cex=0.4)
-  abline(h=objective_cont[index_of_smallest], v=nc, col="blue")
+  abline(h=objective_cont[mIndexn], v=nc, col="blue")
 
   thelist <- list(
     nd=nd,

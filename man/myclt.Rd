@@ -2,17 +2,24 @@
 % Please edit documentation in R/myclt.R
 \name{myclt}
 \alias{myclt}
-\title{myclt}
+\title{Central Limit Theorem (CLT) function}
 \usage{
 myclt(n, iter)
 }
 \arguments{
-\item{n}{n}
+\item{n}{number of trials}
 
-\item{iter}{iter}
+\item{iter}{number of iterations}
+}
+\value{
+a plot containing a histogram of the normalized distribution
 }
 \description{
-The sm has been changed to head(sm) to avoid excessive output
+Note: sm has been changed to head(sm) to avoid excessive output.
+
+This function demonstrates CLT using a uniform distribution. CLT states that
+the distribution of a sample variable approximates a normal distribution,
+regardless of the actual distribution shape.
 }
 \examples{
 \dontrun{myclt(n=10,iter=10000)}
