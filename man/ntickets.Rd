@@ -35,6 +35,3 @@ normal distribution. The sequences are separated by small, fractional values ins
 The objective functions of the discrete and continuous are calculated the same way, except with
 1-gamma-pbinom(...) and 1-gamma-pnorm(...)
 }
-\examples{
-\dontrun{ntickets(N=200,gamma=0.02,p=0.95)}
-}

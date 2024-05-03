@@ -32,8 +32,8 @@
 #'
 #' @export
 #'
-#' @examples
-#' \dontrun{ntickets(N=200,gamma=0.02,p=0.95)}
+#'
+#'
 ntickets <- function(N, gamma, p) {
   qbinom <- qnorm <- pbinom <- pnorm <- NULL
   index_of_smallest_d <- index_of_smallest <- abline <- NULL

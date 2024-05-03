@@ -10,7 +10,7 @@
 #' @return plot
 #' @export
 #'
-#' @examples
+#'
 #'
 mymaxlik=function(lfun,x,param, ...){
   abline <- points <- axis <- dnorm <- NULL

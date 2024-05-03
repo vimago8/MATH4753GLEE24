@@ -13,8 +13,8 @@
 #' @export
 #'
 #'
-#' @examples
-#' with(ddt, scatterhist(LENGTH,WEIGHT, xlab="LENGTH"))
+#'
+#'
 scatterhist = function(x, y, xlab="", ylab=""){
   layout <- hist <- par <- barplot <- mtext <- NULL
 

@@ -21,6 +21,3 @@ a scatter histogram
 \description{
 Creates a scatter-histogram plot with two variables, LENGTH and WEIGHT.
 }
-\examples{
-with(ddt, scatterhist(LENGTH,WEIGHT, xlab="LENGTH"))
-}

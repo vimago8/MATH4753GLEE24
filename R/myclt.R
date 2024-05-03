@@ -16,8 +16,8 @@
 #'
 #'
 #'
-#' @examples
-#' \dontrun{myclt(n=10,iter=10000)}
+#'
+#'
 myclt=function(n,iter){
   runif <- NULL
   hist <- NULL

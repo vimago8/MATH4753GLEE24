@@ -21,6 +21,3 @@ This function demonstrates CLT using a uniform distribution. CLT states that
 the distribution of a sample variable approximates a normal distribution,
 regardless of the actual distribution shape.
 }
-\examples{
-\dontrun{myclt(n=10,iter=10000)}
-}
